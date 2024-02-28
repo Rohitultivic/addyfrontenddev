@@ -45,7 +45,7 @@ jobs:
         run: pwd
 
       - name: Execute deployment script for frontend
-        working-directory: /home/runner/work/addy_frontend/addy_frontend
+        working-directory: ${{ github.workspace }} 
         run: |
           sudo scp -o StrictHostKeyChecking=no -i dev_private_key.pem -r dist ubuntu@${{ secrets.EC2_HOST }}:/var/www/html/dev.addyads.com/addy_frontend
         shell: bash   
