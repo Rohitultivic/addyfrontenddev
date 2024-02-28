@@ -31,7 +31,7 @@ jobs:
 
       - name: Execute cleanup script on Dev Server
         run: |
-          sudo ssh -o StrictHostKeyChecking=no -i dev_private_key.pem ubuntu@ec2-44-202-53-207.compute-1.amazonaws.com:/var/www/html/dev.addyads.com/frontend_cleanup.sh
+          sudo ssh -o StrictHostKeyChecking=no -i dev_private_key.pem ubuntu@ec2-44-202-53-207.compute-1.amazonaws.com "/var/www/html/dev.addyads.com/frontend_cleanup.sh"
 
       - name: Set up SSH key and permissions for frontend
         run: |
